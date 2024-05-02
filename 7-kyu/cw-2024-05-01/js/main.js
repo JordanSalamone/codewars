@@ -17,6 +17,7 @@
 // * Input: [2,2,1,2,1], output = [2,2,2,1]
 
 function removeSmallest(numbers) {
+    numbers = numbers.slice()
     let sorted = [...numbers].sort((a,b) => a-b); 
     let index = numbers.indexOf(sorted[0]);
     numbers.splice(index, 1);
@@ -26,3 +27,8 @@ function removeSmallest(numbers) {
   console.log(removeSmallest([202,5,4,41,302,29,413]))
 
 // solution
+
+function removeSmallest(numbers) {
+    let indexOfMin = numbers.indexOf(Math.min(...numbers));
+    return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+  }
