@@ -26,7 +26,7 @@ let result = '';
         result += '('
       }
     }
-    return result
+  return result
 }
 
 console.log(duplicateEncode("Success"))
