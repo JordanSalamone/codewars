@@ -16,6 +16,6 @@ Because of this, I have greatly expedited gaining knowledge in problem solving. 
 
 ## Lessons Learned:
 
-Learning new ways to solve problems on a platform like Codewars is so much fun! Optimizing my code to be more readable and more efficient is also Who doesn't enjoy a new challenge everyday?!
+Learning new ways to solve problems on a platform like Codewars is so much fun! Optimizing my code to be more readable and more efficient is also a best practice. Who doesn't enjoy a new challenge everyday?!
 
 
