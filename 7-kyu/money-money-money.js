@@ -27,20 +27,19 @@
 // Assumption: Assume that Desired Principal 'D' is always greater than the initial principal. However it is best to take into consideration that if Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
 
 function calculateYears(p, int, tax, desired) {
-    let interestTaxed = 0,
-        result = 0;
-        interestTaxed += (int*p) - ((int*p) * tax);
+    let result = 0;
         result += p + ((int*p) - ((int*p) * tax));
-
+   
     if(desired === p){
         return 0
     }
+
     let i = 1
     while(desired > result){
-        interestTaxed *= tax
-        result += interestTaxed
+        result += ((int*result) - ((int*result) * tax))
         i++
     }
+    
     return i
 }
 
@@ -50,3 +49,21 @@ console.log(calculateYears(1000,0.01625,0.18,1200))
 
 // other solutions
 
+
+function calculateYears(principal, interest, tax, desired) {
+    // your code
+    var years = 0;
+    while(principal < desired){
+      principal += (principal * interest) * (1 - tax);
+      years++;
+    }
+    return years;
+}
+
+
+function calculateYears(principal, interest, tax, desired) {
+    return Math.ceil(
+      Math.log(desired / principal) / 
+      Math.log(1 + interest * (1 - tax))
+    );
+  }
