@@ -20,14 +20,12 @@
 function getMiddle(s)
 {
     let num = s.length
-    console.log()
     if(num % 2 === 0){
         return s[num / 2 - 1] + s[num / 2]
     }
     return s[(num + 1) / 2 - 1]
 }
 
-console.log(getMiddle('tsrtsjifop'))
 
 
 
@@ -35,9 +33,7 @@ console.log(getMiddle('tsrtsjifop'))
 // other solutions
 
 function getMiddle(s){
-  return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
-}
-
-function getMiddle(s){
   return s.slice((s.length-1)/2, s.length/2+1);
 }
+
+console.log(getMiddle('props'))
