@@ -21,7 +21,7 @@ function titleCase(title, minorWords) {
 // split title string and begin looping
 // add loop within loop to get all lowercase letters. Then if the word is not included in minorwords, uppercase the first chracter and add it to new str
 // add each word to empty string with space included at end
-
+// Help
 }
 
 
