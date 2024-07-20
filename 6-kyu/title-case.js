@@ -17,14 +17,58 @@
 // titleCase('the quick brown fox') // should return: 'The Quick Brown Fox'
 
 function titleCase(title, minorWords) {
-//   create new empty string
-// split title string and begin looping
-// add loop within loop to get all lowercase letters. Then if the word is not included in minorwords, uppercase the first chracter and add it to new str
-// add each word to empty string with space included at end
-// Help
+    let result = ''
+    title = title.toLowerCase().split(' ')
+
+    for(let i = 0; i < title.length; i++){
+        if(i === 0){
+            result += title[i].split('').map((item, i) => i === 0 ? item.toUpperCase() : item.toLowerCase()).join('')
+        }else if(minorWords.toLowerCase().includes(title[i])){
+            result += ' ' + title[i].split('').map(item => item.toLowerCase()).join('')
+        }else{
+            result += ' ' + title[i].split('').map((item, i) => i === 0 ? item.toUpperCase() : item.toLowerCase()).join('')
+        }
+    }
+    console.log(result)
+    return result
 }
 
 
+titleCase('THE WIND IN THE WILLOWS', 'The In')
 
 
-// other solutions
+
+// other solutions\
+
+function titleCase(title, minorWords) {
+    var minorWords = typeof minorWords !== "undefined" ? minorWords.toLowerCase().split(' ') : [];
+    return title.toLowerCase().split(' ').map(function(v, i) {
+      if(v != "" && ( (minorWords.indexOf(v) === -1) || i == 0)) {
+        v = v.split('');
+        v[0] = v[0].toUpperCase();
+        v = v.join('');
+      }
+      return v;
+    }).join(' ');
+  }
+
+
+  const titleCase = (title, minorWords) => {
+
+    if (!title) 
+      return title;
+  
+    let cap = word => 
+      word[0].toUpperCase() + word.slice(1);
+  
+    let minors = (minorWords || '')
+      .toLowerCase()
+      .split(' ');
+  
+    let result = title
+      .toLowerCase()
+      .replace(/\S+/g, w => minors.indexOf(w) === -1 ? cap(w) : w);
+  
+    return cap(result);
+  
+  }
