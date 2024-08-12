@@ -25,7 +25,7 @@ multiplicationTable = function(size) {
 }
 
 
-console.log(multiplicationTable(5))
+console.log(multiplicationTable(4))
   
 
 
