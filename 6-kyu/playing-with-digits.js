@@ -41,8 +41,8 @@ function digPow(n, p){
         return -1
     }
 }
-
 console.log(digPow(46288, 3))
+
 
 
 
