@@ -26,13 +26,55 @@
 // In the result codes and their values are in the same order as in M.
 // See "Samples Tests" for the return.
 
-function stockList(books, categories) {
-    return '';
+function stockList(books, cat) {
+    let result = '',
+        zero = 0;
+    for(let i = 0; i < cat.length; i++){
+        result += `(${cat[i]} : `
+        let count = 0
+        for(let j = 0; j < books.length; j++){ 
+            if(books[j][0].includes(cat[i])){
+                count += +findNum(books[j])
+            }
+        }
+        count === 0 ? zero++ : zero--
+        i < cat.length - 1 ? result += `${count}) - ` : result += `${count})`
+    }
+    return zero === cat.length ? '' : result
 }
 
-stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"],
-    ["A", "B", "C", "D"])
+function findNum(list){
+    const match = list.match(/(\d+)/)
+    return match[0]
+}
+
+console.log(stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"],
+    ["A", "B", "C", "D"]))
+
+
+
 
 
 
 // other solutions
+
+function stockList(listOfArt, listOfCat) {
+    if (!listOfArt.length || !listOfCat.length) return ''
+    return listOfCat.map(w => {
+      const s = listOfArt.reduce((a, b) => a + (b.charAt(0) === w ? +b.split(' ')[1] : 0), 0)
+      return `(${w} : ${s})`
+    }).join(' - ')
+}
+
+
+
+function stockList(listOfArt, listOfCat) {
+    return (! listOfArt.length || ! listOfCat.length) ? "" : listOfCat.map(cat => {
+      let needs = listOfArt.filter(el => el.charAt(0) === cat);
+      let count = needs.reduce((a, b) => {
+        return Number(a) + Number(b.split(" ")[1]);
+      }, 0);
+      
+      return "(" + cat + " : " + count + ")";
+    }).join(" - ");
+  }
