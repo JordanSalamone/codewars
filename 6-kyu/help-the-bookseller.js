@@ -30,7 +30,8 @@ function stockList(books, categories) {
     return '';
 }
 
-
+stockList(["BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"],
+    ["A", "B", "C", "D"])
 
 
 
