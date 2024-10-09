@@ -17,14 +17,9 @@
 
 function dataReverse(data) {
     let chunked = chunkArray(data, 8)
-    const split = chunked.reverse()
-    let result = []
-    for(let i = 0; i < split.length; i++){
-        result.push(split[i])
-    }
-    // split.join(',')
-    // split.map(item => +item)
-    return result
+    let split = chunked.reverse()
+        
+    return split.join(',').split(',').map(num => +num)
 }
 
 function chunkArray(arr, size) {
@@ -35,5 +30,34 @@ function chunkArray(arr, size) {
     return chunkedArray;
 }
 
-
 console.log(dataReverse([1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0]))
+
+
+
+
+
+
+
+// other solutions
+
+const dataReverse = data => {
+    const bytes = [];
+    for (let i = 0; i < data.length; i += 8) {
+      bytes.unshift(...data.slice(i, i + 8));
+    }
+    return bytes;
+};
+
+
+
+
+const dataReverse = data => {
+
+	const result = [];
+
+	while(data.length){
+		result.push(...data.splice(-8))
+	}
+
+	return result;
+}
