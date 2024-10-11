@@ -12,7 +12,7 @@
 // It will need 3 entire years.
 // More generally given parameters:
 
-// p0, percent, aug (inhabitants coming or leaving each year), p (population to equal or surpass)
+// pop, percent, aug (inhabitants coming or leaving each year), surp (population to equal or surpass)
 
 // the function nb_year should return n number of entire years needed to get a population greater or equal to p.
 
@@ -27,6 +27,15 @@
 
 // There are no fractions of people. At the end of each year, the population count is an integer: 252.8 people round down to 252 persons.
 
-function nbYear(p0, percent, aug, p) {
-    // another dayyyy
+function nbYear(pop, percent, aug, surp) {
+    let count = 0,
+        newPerc = percent/100
+        newPop = pop;
+    while(newPop < surp){
+        newPop = Math.floor(newPop + newPop * newPerc + aug)
+        count++
+    }
+    return count
 }
+
+console.log(nbYear(1500000, 0.25, 1000, 2000000))
