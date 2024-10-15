@@ -16,7 +16,10 @@
 
 
 function remove(s,n){
-    return s.split('').map()
+    let arr = s.split('')
+    for(let i = 0; i < n; i++){
+        
+    }
 }
 
 console.log(remove("!Hi!",1))
