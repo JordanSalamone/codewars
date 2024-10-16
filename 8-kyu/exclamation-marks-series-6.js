@@ -15,18 +15,27 @@
 // remove("!!!Hi !!hi!!! !hi",100) === "Hi hi hi"
 
 
+// function remove(s,n){
+//     let arr = s.split(''),
+//         num = n,
+//         result = [];
+//     for(let i = 0; i < arr.length; i++){
+//         if(num > 0 && arr[i] == '!'){
+//             num--
+//         }else{
+//             result.push(arr[i])
+//         }
+//     }
+//     return result.join('')
+// }
+
+
+
+
+// other solutions
 function remove(s,n){
-    let arr = s.split(''),
-        num = n,
-        result = [];
-    for(let i = 0; i < arr.length; i++){
-        if(num > 0 && arr[i] == '!'){
-            num--
-        }else{
-            result.push(arr[i])
-        }
-    }
-    return result.join('')
+    for (let i = 0; i < n; i++) s = s.replace("!","");
+    return s;
 }
 
-console.log(remove("!Hi! Hi!",1))
+console.log(remove("!Hi! Hi!",2))
