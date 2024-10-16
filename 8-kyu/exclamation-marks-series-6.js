@@ -16,10 +16,17 @@
 
 
 function remove(s,n){
-    let arr = s.split('')
-    for(let i = 0; i < n; i++){
-        
+    let arr = s.split(''),
+        num = n,
+        result = [];
+    for(let i = 0; i < arr.length; i++){
+        if(num > 0 && arr[i] == '!'){
+            num--
+        }else{
+            result.push(arr[i])
+        }
     }
+    return result.join('')
 }
 
-console.log(remove("!Hi!",1))
+console.log(remove("!Hi! Hi!",1))
