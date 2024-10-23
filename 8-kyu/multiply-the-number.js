@@ -6,6 +6,16 @@
 //   0 -->     0  (  0 * 5¹)
 //  -3 -->   -15  ( -3 * 5¹)
 
-function multiply(number){
-    //your code here
+function multiply(num){
+    return num < 0 ? num * Math.pow(5, String(num).length - 1) : num * Math.pow(5, String(num).length)
+}
+
+multiply(-2000)
+
+
+
+
+// other solution
+function multiply(number) {
+    return number * Math.pow(5, Math.abs(number).toString().length);
 }
