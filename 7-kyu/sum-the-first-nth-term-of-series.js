@@ -58,5 +58,25 @@
 // 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 
 function SeriesSum(n) {
-    // Happy Coding ^_^
+    // f for fraction
+    let f = 4,
+        result = 1
+    for(i = 1; i < n; i++){
+        result += 1/f
+        f += 3
+    }
+    return n == 0 ? '0.00' : result.toFixed(2)
+}
+
+console.log(SeriesSum(4))
+
+
+
+// other solutions
+function SeriesSum(n) {
+    for (var s = 0, i = 0; i < n; i++) {
+      s += 1 / (1 + i * 3)
+    }
+    
+    return s.toFixed(2)
 }
