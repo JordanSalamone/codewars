@@ -22,4 +22,4 @@ function deleteNth(arr,n){
     }
 }
 
-deleteNth([2, 3, 3, 7, 3, 3, 2, 2, 9], 4)
+deleteNth([2, 3, 3, 7, 3, 3, 2, 2, 9], 5)
