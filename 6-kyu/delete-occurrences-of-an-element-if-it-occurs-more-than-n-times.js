@@ -11,15 +11,34 @@
 
 // With list [20,37,20,21] and number 1, the result would be [20,37,21].
 
-
-function deleteNth(arr,n){
-    // take the arr and find the duplicates
-    let dup = arr.filter((item, index) => arr.indexOf(item) < index)
-    console.log(dup)
-    // add those duplicates to a seperate dup arr
-    for(let i = 0; i < arr.length; i++){
-        
-    }
+function deleteNth(arr,x){
+    let obj = {}
+    return arr.filter(function(number){
+      obj[number] = obj[number] ? obj[number] + 1 : 1
+      return obj[number] <= x
+    })
 }
 
-deleteNth([2, 3, 3, 7, 3, 3, 2, 2, 9], 5)
+
+console.log(deleteNth([2, 3, 3, 7, 3, 3, 2, 2, 9, 2, 2, 2, 2, 3], 5))
+
+
+
+
+
+
+// other solutions
+
+// const deleteNth = (a, x) => {
+//     let m = {};
+//     return a.filter( v => (m[v] = m[v]+1||1) <= x );
+// }
+
+
+// function deleteNth(arr,x) {
+//     let cache = {};
+//     return arr.filter(function(n) {
+//       cache[n] = (cache[n]||0) + 1;
+//       return cache[n] <= x;
+//     });
+// }
