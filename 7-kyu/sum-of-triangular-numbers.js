@@ -14,16 +14,41 @@
 
 function sumTriangularNumbers(n) {
     let result = 0,
+        arr = [],
         add = 2;
-    for(let i = 0; i <= n; i++){
+    for(let i = 0; i < n; i++){
         if(i == 0){
             result++ 
         }else{
             result += add
             add++ 
         }
+        arr.push(result)
     }
-    return result
+    return n < 0 ? 0 : arr.reduce((acc, cur) => acc += cur, 0)
 }
 
-sumTriangularNumbers(4)
+console.log(sumTriangularNumbers(4))
+
+
+
+
+
+
+
+// other solutions
+
+function sumTriangularNumbers(n) {
+    return n < 0 ? 0 : n * (n + 1) * (n + 2) / 6;
+}
+
+
+
+function sumTriangularNumbers(n) {
+    if  (n < 0){
+    return 0;
+    }
+    else  {
+      return n*(n+1)/2 + sumTriangularNumbers(n-1);
+    }
+}
