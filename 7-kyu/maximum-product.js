@@ -25,6 +25,22 @@
 // The maximum product obtained from multiplying -2 * 7 = -14, and they're adjacent numbers in the array.
 
 function adjacentElementsProduct(array) {
-    return array.sort((a,b) => Math.abs(a*b) - b)
+    let result = []
+    for(let i = 0; i < array.length - 1; i++){
+        result.push(array[i] * array[i + 1])
+    }
+    return result.sort((a,b) => b - a)[0]
 }
-// ?????????
+
+
+
+
+
+// other solutions
+function adjacentElementsProduct(array) {
+    let newArr = []
+    for(i=0; i < array.length-1; i++){
+      newArr.push(array[i]*array[i+1])
+    }  
+    return Math.max(...newArr)
+}
