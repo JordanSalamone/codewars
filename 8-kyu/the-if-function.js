@@ -8,13 +8,5 @@
 // // Logs 'True' to the console.
 
 function _if(bool, func1, func2) {
-    return bool ? func1 : func2
-}
-
-function func1(){
-    console.log("True")
-}
-
-function func2(){
-    console.log("false")
+    return bool ? func1() : func2()
 }
