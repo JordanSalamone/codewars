@@ -36,11 +36,20 @@
 // We don't take care of a deposit of savings in a bank:-)
 
 function nbMonths(priceOld, priceNew, savingPerMonth, percentLoss){
-    let available = priceOld - priceNew,
+    let pOld = priceOld,
+        pNew = priceNew,
+        available = pOld - pNew,
         months = 0;
     
     while(available < 0){
+        console.log(available)
+        pNew *= (.01 * percentLoss)
+        pOld *= (.01 * percentLoss)
+        available += savingPerMonth
+
         months++
     }
-      return [0, 0];
+    return [months, available];
 }
+
+console.log(nbMonths(2000, 8000, 1000, 1.5))
