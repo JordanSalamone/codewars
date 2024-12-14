@@ -36,8 +36,8 @@
 // We don't take care of a deposit of savings in a bank:-)
 
 function nbMonths(priceOld, priceNew, savingPerMonth, percentLoss){
-    let pOld = priceOld,
-        pNew = priceNew,
+    let pOld = priceOld.slice(),
+        pNew = priceNew.slice(),
         available = pOld - pNew,
         months = 0;
     
