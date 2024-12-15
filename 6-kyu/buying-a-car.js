@@ -35,21 +35,49 @@
 // nbMonths(8000, 8000, 1000, 1.5) should return [0, 0]
 // We don't take care of a deposit of savings in a bank:-)
 
-function nbMonths(priceOld, priceNew, savingPerMonth, percentLoss){
-    let pOld = priceOld.slice(),
-        pNew = priceNew.slice(),
-        available = pOld - pNew,
-        months = 0;
-    
-    while(available < 0){
-        console.log(available)
-        pNew *= (.01 * percentLoss)
-        pOld *= (.01 * percentLoss)
-        available += savingPerMonth
 
-        months++
-    }
-    return [months, available];
-}
+
+
+// my crack at it which was wrong lol :
+
+// function nbMonths(priceOld, priceNew, savingPerMonth, percentLoss){
+//     let percent = percentLoss  * .01,
+//         pO = priceOld,
+//         pN = priceNew,
+//         available = -.1,
+//         months = 0;
+    
+//     while(available < 0){
+//         console.log(available)
+//         available += (savingPerMonth + (pO - pN))
+//         if(months >= 2 && months% 2 == 0){
+//             pN *= .05
+//             pO *= .05
+//         }
+//         pN *= percent
+//         pO *= percent
+//         months++
+//     }
+//     return [months, available];
+// }
+
+
+
+
+
+// other solutions
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+    var months = 0, moneySaved = 0;
+      while (startPriceNew > startPriceOld + moneySaved){
+          moneySaved += savingperMonth;
+          startPriceOld -= (startPriceOld * (percentLossByMonth / 100));
+          startPriceNew -= (startPriceNew * (percentLossByMonth / 100));
+          months++;
+          if (months % 2 == 1){
+              percentLossByMonth += .5;
+          }
+      }
+      return [months, Math.round(startPriceOld + moneySaved - startPriceNew)];
+  }
 
 console.log(nbMonths(2000, 8000, 1000, 1.5))
