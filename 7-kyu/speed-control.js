@@ -20,5 +20,5 @@
 //  (3600 * delta_distance) / s.
 
 function gps(s, x) {
-    // your code
+    let meBe = 'lol'
 }
