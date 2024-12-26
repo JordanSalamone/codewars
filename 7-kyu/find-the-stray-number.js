@@ -10,15 +10,18 @@
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 
 function stray(numbers) {
-    let result = 0
+    let result = []
     for(let i = 0; i < numbers.length; i++){
-        let copy = numbers.slice(),
-            item = numbers.slice(i, 0)
+        let copy = numbers.slice()
+            item = copy.splice(i, 1)
+            console.log(copy)
             for(let j = 0; j < copy.length; j++){
                 if(item !== copy[j]){
-                    result += item
+                    result.push(item)
                 }
             }
     }
     return result
 }
+
+stray([1, 2, 1, 1, 1])
