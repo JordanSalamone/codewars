@@ -12,7 +12,7 @@ const orderedCount = function (text) {
     // concat each array to the primary array WHAT IN THE WORLD!
     let letters = text.split('')
         result = []
-        
+        // Why GOD
     for(let i = 0; i < text.length; i++){
         if(result.includes(letters[i])){
 
