@@ -13,6 +13,22 @@
 // * [1, 3, 5, 7, 9, 11, 12], [1, 2, 3, 4, 5, 10, 12] -> [1, 2, 3, 4, 5, 7, 9, 10, 11, 12]
 
 function mergeArrays(arr1, arr2) {
-    let arr = arr1.concat(arr2)
-   return arr.sort((a,b) => a - b)
+    let arr = arr1.concat(arr2).sort((a,b) => a - b),
+        result = []
+    for(let i = 0; i < arr.length; i++){
+        if(!result.includes(arr[i])){
+            result.push(arr[i])
+        }
+    }
+    return result
 }
+
+mergeArrays([1,3,5,7,9,11,12], [1,2,3,4,5,10,12])
+
+
+
+
+// other solutions
+function mergeArrays(a, b) {
+    return [...new Set(a.concat(b))].sort((a,b)=>a-b)
+  }
