@@ -11,5 +11,5 @@
 // You will be given a string of numbers and letters mixed up, you have to return all the numbers in that string in the order they occur.
 
 function filterString(value) {
-    //Complete this function :)
+    //Complete this function not right now Boba
 }
