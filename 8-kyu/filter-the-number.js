@@ -11,5 +11,5 @@
 // You will be given a string of numbers and letters mixed up, you have to return all the numbers in that string in the order they occur.
 
 function filterString(value) {
-    //another day another dollar
+    return +value.split('').filter(z => z % 1 == 0).join('')
 }
