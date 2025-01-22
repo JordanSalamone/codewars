@@ -7,7 +7,6 @@
 // ghost = new Ghost();
 // ghost.color //=> "white" or "yellow" or "purple" or "red"
 
-let Ghost = function() {
-    const arr = ['white', 'yellow', 'purple', 'red'];
-    return arr[Math.random().toString(5).substr(2, 5)]
-};
+var Ghost = function() {
+    this.color = ["white","yellow","purple","red"][Math.floor(Math.random() * 4)];
+  };
