@@ -37,7 +37,7 @@ function closeCompare(a, b, margin){
             result -= 1
         }
     }else{
-        // yrp
+        // yrp nooo dont you put it awayyyyyy
     }
     return result
 }
