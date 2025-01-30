@@ -31,6 +31,7 @@
 function closeCompare(a, b, margin){
     let result = 0
         // I need to implement a new order of if statements
+        // Finish today plz
     if(!margin){
         if(a > b){
             result += 1
