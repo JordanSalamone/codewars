@@ -29,17 +29,30 @@
 // This is because the distance between a and b is greater than 0, and a is less than b.
 
 function closeCompare(a, b, margin){
-    let result = 0
-        // I need to implement a new order of if statements
-        // Finish today plz
-    if(!margin){
-        if(a > b){
-            result += 1
-        }else if(a < b){
-            result -= 1
+    if(a === b){
+        return 0
+    }else if(a > b){
+        if(margin >= a - b){
+            return 0
+        }else{
+            return 1
+        }
+    }else if(a < b){
+        if(margin >= b - a){
+            return 0
+        }else{
+            return -1
         }
     }else{
-        
+        return 1
     }
-    return result
+}
+
+
+
+
+// much simpler lol
+
+function closeCompare(a, b, m = 0){
+    return Math.abs(a - b) <= m? 0: Math.sign(a - b);
 }
