@@ -11,7 +11,7 @@ function minValue(values){
     for(let i = 0; i < values.length; i++){
         if(!result.includes(values[i])){
             result.push(values[i])
-        }
+        // } MAS DELA PAPAPAPAPAPAPAPAPAPAPAPAAAAAAAAAAA
     }
     return result.sort().join()
 }
