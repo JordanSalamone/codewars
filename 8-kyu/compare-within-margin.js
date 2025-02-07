@@ -50,7 +50,6 @@ function closeCompare(a, b, margin){
 
 
 
-
 // much simpler lol
 
 function closeCompare(a, b, m = 0){
