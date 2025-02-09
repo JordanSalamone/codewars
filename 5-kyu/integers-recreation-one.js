@@ -16,6 +16,31 @@
 
 // In Fortran - as in any other language - the returned string is not permitted to contain any redundant trailing whitespace: you can use dynamically allocated character strings.
 
-function listSquared(m, n) {
-    let that = m
+function listSquared (m, n) {
+	var matches = [];
+
+	for (var i = m; i <= n; ++i) {
+		var sum = getDivisors(i).reduce((sum, n) => sum + n * n, 0);
+		var ok = Number.isInteger(Math.sqrt(sum));
+
+		if (ok) {
+			matches.push([i, sum]);
+		}
+	}
+
+	return matches;
+}
+
+function getDivisors (n) {
+	var divisors = [];
+
+	for (var i = 1; i <= n / 2; ++i) {
+		if (n % i) {
+			continue;
+		}
+
+		divisors.push(i);
+	}
+
+	return divisors.concat([n]);
 }
