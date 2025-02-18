@@ -8,5 +8,14 @@
 // the returned string should only contain lowercase letters
 
 function kebabize(str) {
-    
+    let result = '',
+        split = str.split('')
+    for(let i = 0; i < str.length; i++){
+        if(i === 0){
+            result += str[i].toLowerCase()
+        }else if(isNaN(split[i])){
+                split[i] === split[i].toUpperCase() ? result += '-' + str[i].toLowerCase() : result += str[i]
+        }
+    }
+    return result
 }
