@@ -11,6 +11,10 @@
 // "Buckethead" is an anagram of "DeathCubeK"
 
 // write the function isAnagram
-const isAnagram = function(test, original) {
-    
+const isAnagram = function(test, OG) {
+    let sortTest = test.toLowerCase().split('').sort().join(''),
+        sortOG = OG.toLowerCase().split('').sort().join('');
+    return sortTest === sortOG
 };
+
+console.log(isAnagram("Buckethead", "DeathCubeK"))
