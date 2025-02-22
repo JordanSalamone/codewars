@@ -31,10 +31,29 @@
 
 class Block{
 
-    constructor(data){
-      // ...
+    constructor(w, l, h){
+      this.width = w
+      this.length = l
+      this.height = h
+      this.volume = l*w*h
+      this.surfaceArea = 2 * (l*w + l*h + h*w)
+
+      function getWidth(){
+        return this.width
+      }
+      function getLength(){
+        return this.length
+      }
+      function getHeight(){
+        return this.height
+      }
+      function getVolume(){
+        return this.volume
+      }
+      function getSurfaceArea(){
+        return this.surfaceArea
+      }
+
     }
-    
-    // ...
     
 }
