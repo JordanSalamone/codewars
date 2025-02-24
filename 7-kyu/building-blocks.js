@@ -53,7 +53,7 @@ class Block{
       function getSurfaceArea(){
         return this.surfaceArea
       }
-
+// Fix above
     }
     
 }
