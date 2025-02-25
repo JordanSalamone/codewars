@@ -31,29 +31,50 @@
 
 class Block{
 
-    constructor(w, l, h){
-      this.width = w
-      this.length = l
-      this.height = h
-      this.volume = l*w*h
-      this.surfaceArea = 2 * (l*w + l*h + h*w)
+    constructor(dim){
+      this.width = dim[0]
+      this.length = dim[1]
+      this.height = dim[2]
+      this.volume = dim[0]*dim[1]*dim[2]
+      this.surfaceArea = 2 * (dim[0]*dim[1] + dim[1]*dim[2] + dim[2]*dim[0])
 
-      function getWidth(){
-        return this.width
-      }
-      function getLength(){
-        return this.length
-      }
-      function getHeight(){
-        return this.height
-      }
-      function getVolume(){
-        return this.volume
-      }
-      function getSurfaceArea(){
-        return this.surfaceArea
-      }
-// Fix above
     }
-    
+    getWidth(){
+      return this.width
+    }
+    getLength(){
+      return this.length
+    }
+    getHeight(){
+      return this.height
+    }
+    getVolume(){
+      return this.volume
+    }
+    getSurfaceArea(){
+      return this.surfaceArea
+    } 
+}
+
+
+
+
+
+
+// other solutions
+class Block {
+  constructor(data){
+    [this.w, this.l, this.h] = data;
+  }
+  getWidth(){ return this.w }
+  getLength(){ return this.l }
+  getHeight(){ return this.h }
+  getVolume(){
+    let {l, w, h} = this;
+    return w*l*h;
+  }
+  getSurfaceArea(){
+    let {l, w, h} = this;
+    return 2 * (l*w + l*h + w*h);
+  }
 }
