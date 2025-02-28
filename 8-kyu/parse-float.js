@@ -3,3 +3,5 @@
 function parseF(s) {
     return isNaN(parseFloat(s)) ? null : parseFloat(s);
 }
+
+// They really need to reword the instructions to this lol
