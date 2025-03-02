@@ -13,5 +13,7 @@ function outed(meet, boss){
     for(let x in meet){
         ratings.push(meet[x])
     }
-    return (ratings.reduce((acc, cur) => acc += cur, 0) / meet.length) <= 5 ? 'Get Out, Now!' : 'Still working'
+    return ((ratings.reduce((acc, cur) => acc += cur, 0) + meet[boss]) / ratings.length) <= 5 ? 'Get Out Now!' : 'Nice Work Champ!'
 }
+
+console.log(outed({"tim":5,"jim":1,"randy":7,"sandy":6,"andy":1,"katie":2,"laura":8,"saajid":7,"alex":2,"john":3,"mr":9}, 'alex'))
