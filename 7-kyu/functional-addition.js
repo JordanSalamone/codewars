@@ -10,4 +10,7 @@
 
 function add(n) {
 //   find how to use a function within a function and what in the world the question is asking
+    function add(n2){
+        return n + n2
+    }
 }
