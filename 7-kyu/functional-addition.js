@@ -8,9 +8,7 @@
 // var addThree = add(3);
 // addThree(3); // 6
 
-function add(n) {
-//   find how to use a function within a function and what in the world the question is asking
-    function add(n2){
-        return n + n2
-    }
-}
+let add =
+    n =>
+    n2 =>
+    n + n2
