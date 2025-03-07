@@ -5,5 +5,5 @@
 // uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
 
 function uefaEuro2016(teams, scores){
-    // your code...
+    // your code... VACATION
 }
