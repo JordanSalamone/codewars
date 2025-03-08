@@ -5,5 +5,12 @@
 // uefaEuro2016(['Portugal', 'Iceland'],[1, 1]) // "At match Portugal - Iceland, teams played draw."
 
 function uefaEuro2016(teams, scores){
-    // your code... VACATION
+    let match = `At match ${teams[0]} - ${teams[1]},`
+    if(scores[0] > scores[1]){
+        return `${match} ${teams[0]} won!`
+    }else if(scores[0] < scores[1]){
+        return `${match} ${teams[1]} won!`
+    }else{
+        return `${match} teams played draw.`
+    }
 }
