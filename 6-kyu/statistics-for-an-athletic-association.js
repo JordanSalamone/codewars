@@ -26,5 +26,26 @@
 // if the given string is "" you will return ""
 
 function stat(strg) {
-    // your code
-}
+    let times = strg.split(', ').map(e => e.split('|').reduce((p,c) => p * 60 + Number(c)))
+                    .sort((a,b) => a - b),
+        length = times.length,
+        half = Math.floor(length / 2),
+        range = Math.max(...times) - Math.min(...times),
+        average = Math.floor(times.reduce((p,c) => p + c) / length),
+        median = length % 2 ? times[half]
+                            : Math.floor((times[half] + times[half - 1]) / 2),
+        final = n => [Math.floor(n / 3600),Math.floor(n / 60 % 60), n % 60]
+                      .map(e => `${e}`.padStart(2,'0')).join('|')
+    if (strg == '') {
+      return ''
+    }
+    return `Range: ${final(range)} Average: ${final(average)} Median: ${final(median)}`
+  }
+
+stat("01|15|59, 1|47|16, 01|17|20, 1|32|34, 2|17|17")
+
+
+
+
+
+
