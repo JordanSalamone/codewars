@@ -15,7 +15,8 @@
 //                        6
 
 function calc(x){
-    return x.split('').map(item => item.charCodeAt()).join('')
+    let split = x.split('').map(item => item.charCodeAt()).join('')
+    return split - split.split('').map(item => item == 7 ? 1 : item).join('')
 }
 
 console.log(calc('ABC'))
