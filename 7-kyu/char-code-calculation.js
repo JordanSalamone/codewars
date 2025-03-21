@@ -15,8 +15,33 @@
 //                        6
 
 function calc(x){
-    let split = x.split('').map(item => item.charCodeAt()).join('')
-    return split - split.split('').map(item => item == 7 ? 1 : item).join('')
+    let total1 = x.split('').map(item => item.charCodeAt()).join('').split('').map(item => +item),
+        total2 = total1.map(item => item == 7 ? 1 : +item);
+
+    return total1.reduce((a,c) => a += c, 0)  - total2.reduce((a,c) => a += c, 0)
 }
 
-console.log(calc('ABC'))
+console.log(calc('aaaaaddddr'))
+
+
+
+// other solutions
+function calc(x){
+    let sum = n => [...n].reduce((a,b) => +a + +b);
+    let total1 = x.replace(/./g, x => x.charCodeAt(0));
+    let total2 = total1.replace(/7/g,'1');
+    return sum(total1) - sum(total2);
+}
+
+
+
+function calc(x){
+    return x
+      .split('')
+      .map(c => c.charCodeAt(0))
+      .join('')
+      .split('')
+      .map(Number)
+      .filter(x => x === 7)
+      .length * 6
+}
