@@ -18,8 +18,50 @@
 // === "e6t-r3s are r4y fun!"
 
 function abbreviate(string) {
-    // find characters split by non characters and 
-    // find the length of each string
-    // create strings that include the first and last character of the word and add the length as a number inbetween those letters.
-    
+    var na = /([^a-z])/i;                                                                      // 1 
+    var ss = string.split(na);                                                                 // 2
+    return ss
+      .map(function(element) {                                                                 // 3
+        if (element.length >= 4) {                                                             // 4
+           return element = "" + element[0] + (element.length-2) + element[element.length-1];
+        }                                                                                      // 5
+        else return element                                                                    // 6
+      })
+      .join(separator = "")                                                                    // 7
+  }
+  
+  /*1: Set up a remembered non-alphabetical delimiter for string.split(), 
+    2: and split the input string along this delimiter, returning an array of strings.  
+    3: For each element in the array of split input strings,
+    4: If the length of that element (string) is >= 4 characters,
+    5: Set that element to be an abbreviated version of itself.
+    6: If the length of the element is not >=4, return the element as found.
+    7: Finally, join all elements together, and return ss */
+
+abbreviate("elephant-rides are really fun!")
+
+
+
+
+
+// other solution
+function abbreviate(string) {
+    const abc = 'abcdefghijklmnopqrstuvwxyz'
+    let spacers = []
+    string =  string.split('').map((char, i, arr) => {
+      if(abc.includes(char.toLowerCase())) return char
+      else {
+        spacers.push([char, i])
+        return ' '
+      }
+    }).join('').split(' ').map(word => {
+      if(word.length <= 3) return word
+      else return word.slice(0,1) + (word.length - 2) + word.slice(word.length - 1, word.length)
+    })
+    if(string.length > 1) {
+      for(let i = 0, j = 1; j < string.length; i ++, j += 2) {
+        string.splice(j, 0, spacers[i][0])
+      }
+    }
+    return string.join('')
 }
