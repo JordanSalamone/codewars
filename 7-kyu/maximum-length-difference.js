@@ -15,5 +15,5 @@
 // output: number as a string
 
 function mxdiflg(a1, a2) {
-    // your code
+    return Math.max(abs(length(a1) − length(a2)))
 }
