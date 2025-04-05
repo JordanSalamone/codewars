@@ -2,11 +2,11 @@
 
 // Now that the competition gets tough it will Sort out the men from the boys .
 
-// Men are the Even numbers and Boys are the odd !alt!alt
+// Men are the Even numbers and Boys are the odd
 
 // Task
 
-// Given an array/list [] of n integers , Separate The even numbers from the odds , or Separate the men from the boys !alt!alt
+// Given an array/list [] of n integers , Separate The even numbers from the odds , or Separate the men from the boys
 
 // Notes
 
@@ -18,7 +18,7 @@
 
 // Array/list numbers could be a mixture of positives , negatives .
 
-// Have no fear , It is guaranteed that no Zeroes will exists . !alt
+// Have no fear , It is guaranteed that no Zeroes will exists .
 
 // Repetition of numbers in the array/list could occur , So (duplications are not included when separating).
 
@@ -45,5 +45,14 @@
 
 
 function menFromBoys(arr){
-    let newArr = []
+    let even = [],
+        odd = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i]%2 == 0){
+            even.push(arr[i])
+        }else{
+            odd.push(arr[i])
+        }
+    }
+    return even.sort().concat(odd.sort((a,b) => b - a))
 }
