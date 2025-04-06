@@ -48,9 +48,9 @@ function menFromBoys(arr){
     let even = [],
         odd = [];
     for(let i = 0; i < arr.length; i++){
-        if(arr[i]%2 == 0){
+        if(arr[i]%2 == 0 && !even.includes(arr[i])){
             even.push(arr[i])
-        }else{
+        }else if(!odd.includes(arr[i])){
             odd.push(arr[i])
         }
     }
