@@ -54,5 +54,5 @@ function menFromBoys(arr){
             odd.push(arr[i])
         }
     }
-    return even.sort().concat(odd.sort((a,b) => b - a))
+    return even.sort((a,b) => a - b).concat(odd.sort((a,b) => b - a))
 }
