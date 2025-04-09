@@ -45,14 +45,8 @@
 
 
 function menFromBoys(arr){
-    let even = [],
-        odd = [];
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i]%2 == 0 && !even.includes(arr[i])){
-            even.push(arr[i])
-        }else if(!odd.includes(arr[i])){
-            odd.push(arr[i])
-        }
-    }
-    return even.sort((a,b) => a - b).concat(odd.sort((a,b) => b - a))
-}
+    arr = Array.from(new Set(arr));
+    let odd = arr.filter(a => a % 2).sort((a, b) => b - a);
+    let even = arr.filter(a => a % 2 === 0).sort((a, b) => a - b);
+    return even.concat(odd);
+  }
