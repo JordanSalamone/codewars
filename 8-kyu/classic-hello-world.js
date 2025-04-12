@@ -13,7 +13,7 @@
 
 // Print "Hello World!" to the screen
 class Solution{
-    main(){
-        return 'Hello World!'
-    } 
-}
+    static main() {
+      console.log("Hello World!");
+    }  
+  }
