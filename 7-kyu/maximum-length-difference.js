@@ -20,3 +20,6 @@ function mxdiflg(a1, a2) {
     let l2 = a2.map(str => str.length)
     return Math.max(Math.max(...l1) - Math.min(...l2), Math.max(...l2) - Math.min(...l1))
   }
+
+
+  // I still need to understand this
