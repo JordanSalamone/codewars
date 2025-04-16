@@ -18,5 +18,18 @@
 // "Jędrzej Błądziński"  -->  "Jedrzej Bladzinski"
 
 function correctPolishLetters (string) {
-    // your code
+    const diacritics = {
+        'ą' : 'a',
+        'ć' : 'c',
+        'ę' : 'e',
+        'ł' : 'l',
+        'ń' : 'n',
+        'ó' : 'o',
+        'ś' : 's',
+        'ź' : 'z',
+        'ż' : 'z'
+    }
+    return string.replace(/[ąćęłńóśźż]/g, m => diacritics[m])
 }
+
+console.log(correctPolishLetters("Lech Wałęsa"))
