@@ -21,6 +21,12 @@
 
 //return the total number of smiling faces in the array
 function countSmileys(arr) {
-    let smileys = [':)', ':D', ';-D', ':~)'];
-    return 0;
+    let smileys = [';D', ':)', ';)', ';D', ':~D', ';~D', ':-)', ':D', ':-D', ';-D', ':~)', ';~)', ';-)'],
+        result = 0;
+    for(let i = 0; i < arr.length; i++){
+        if(smileys.includes(arr[i])){
+            result++
+        }
+    }
+    return result;
 }
