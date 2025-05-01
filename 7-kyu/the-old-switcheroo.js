@@ -10,6 +10,15 @@
 // Your function should be case insensitive to the vowels.
 
 function vowel2index(str) {
-    let vowels = 'aeiou'
+    let vowels = 'aeiou',
+        result = ''
+    for(let i = 0; i < str.length; i++){
+        if(vowels.includes(str[i])){
+            result += i
+        }else{
+            result += str[i]
+        }
+    }
+    return result
 }
  
