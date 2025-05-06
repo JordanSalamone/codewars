@@ -6,6 +6,6 @@
 // Length should be between 4 and 16 characters (both included).
 
 function validateUsr(username) {
-    const res =  //regex here/.test(username)
-    return res;
+    const res =  /^[a-z][a-z0-9_]{4,16}$/;
+    return res.test(username);
 }
