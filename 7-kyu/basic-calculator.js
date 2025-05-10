@@ -9,5 +9,9 @@
 // Keep in mind, you cannot divide by zero. If an attempt to divide by zero is made, return null (throw an ArgumentException in C#)/(None in Python).
 
 function calculate(num1, operation, num2) {
-    //TODO: make a basic calculator. 
+    if (operation === "+") return num1 + num2;
+    if (operation === "-") return num1 - num2;
+    if (operation === "*") return num1 * num2;
+    if (operation === "/" && num2 !== 0) return num1 / num2;
+    return null;
 }
