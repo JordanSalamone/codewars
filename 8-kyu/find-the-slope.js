@@ -9,7 +9,13 @@
 //    d:y2
 // Assume that [a,b,c,d] and the answer are all integers (no floating numbers!). Slope: https://en.wikipedia.org/wiki/Slope
 
-function slope(points){
-    let slope = (points[3] - points[1]) / (points[2] - points[0])
-    return slope !== Number ? 'undefined' : String(slope)
+function slope([ x1, y1, x2, y2 ]) {
+    let slope = (y2 - y1) / (x2 - x1);
+    return Number.isFinite(slope) ? `${slope}` : 'undefined';
 }
+// function slope(points){
+//     let slope = (points[3] - points[1]) / (points[2] - points[0])
+//     return slope >= 0 && slope !== Infinity ? String(slope) :'undefined'
+// }
+
+console.log(slope([10,50,30,150]))
