@@ -14,6 +14,6 @@
 
 //return price without vat
 function excludingVatPrice(price){
-    // your code
-    return 0;
+    let result = (price / 1.15).toFixed(2)
+    return result > 0 ? +result : -1
 }
