@@ -6,7 +6,12 @@
 // * [1, 1, 2, 3, 1, 2, 3, 4, 4, 3, 5, 6, 7, 2, 8], [1, 3, 4, 2] -> [5, 6, 7, 8]
 // * [8, 2, 7, 2, 3, 4, 6, 5, 4, 4, 1, 2, 3], [2, 4, 3] -> [8, 7, 6, 5, 1]
 
-Array.prototype.remove_ = function(integer_list, values_list){
-    let split = values_list.join('')
-    return integer_list.join('').replaceAll(split)
+Array.prototype.remove_ = function(intList, valList){
+    let result = []
+    for(let i = 0; i < intList.length; i++){
+        if(valList.indexOf(intList[i]) == -1){
+            result.push(intList[i])
+        }
+    }
+    return result
 }
