@@ -7,5 +7,9 @@
 // [1, 2, 3, -4]  //  returns 7 because 3 - (-4) == 7
 
 function maxDiff(list) {
-    
+    let sort = list.sort((a,b) => a - b),
+        result = sort[sort.length - 1] - sort[0]
+    return list.length <= 1 ? 0 : result
 };
+
+console.log(maxDiff([-0, 1, 2, -3, 4, 5, -6]))
