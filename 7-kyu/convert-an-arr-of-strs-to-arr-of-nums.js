@@ -11,4 +11,5 @@
 // Note that you can receive floats as well.
 
 function toNumberArray(stringarray){
+    return stringarray.map(item => +item)
 }
