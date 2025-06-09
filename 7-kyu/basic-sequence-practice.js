@@ -15,5 +15,12 @@
 //  7  -->  [0,  1,  3,  6,  10,  15,  21,  28]
 
 function sumOfN(n) {
-    
+    let result = [0];
+    for(let i = 1; i <= Math.abs(n); i++){
+        n < 0 ? result.push(result[i - 1] + -i) : 
+        result.push(result[i - 1] + i)
+    }
+    return result
 }
+
+console.log(sumOfN(-4))
