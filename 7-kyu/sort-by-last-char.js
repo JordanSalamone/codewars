@@ -5,5 +5,5 @@
 // All inputs will be valid.
 
 function last(x){
-
+    return x.split(' ').sort()
 }
