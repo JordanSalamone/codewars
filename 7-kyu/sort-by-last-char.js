@@ -5,5 +5,5 @@
 // All inputs will be valid.
 
 function last(x){
-    return x.split(' ').sort()
+    return x.split(' ').sort((a, b) => a[a.length - 1] - b[b.length - 1])
 }
