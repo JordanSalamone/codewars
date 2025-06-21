@@ -8,8 +8,5 @@
 // [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12
 // [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]  -->   3
 
-function highestRank(arr){
-    // first sort
-    // then reduce
-    // I reeally need to think this through
-}
+const highestRank = arr =>
+    arr.sort((a, b) => arr.filter(val => val === b).length - arr.filter(val => val === a).length || b - a)[0];
